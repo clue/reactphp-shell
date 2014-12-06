@@ -28,7 +28,11 @@ $shell->end();
 $loop->run();
 ```
 
-See also the [examples](examples).
+See also the [examples](examples):
+
+* [Run shell commands within a bash shell](examples/bash.php)
+* [Run PHP code within an interactive PHP shell](examples/php.php)
+* [Run shell commands within a docker container](examples/docker.php)
 
 ## Install
 
