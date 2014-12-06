@@ -1,0 +1,23 @@
+{
+    "name": "clue/shell-react",
+    "description": "Run async commands within any interactive shell command",
+    "keywords": ["interactive", "sheller", "ReactPHP", "async"],
+    "homepage": "https://github.com/clue/php-shell-react",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Lück",
+            "email": "christian@lueck.tv"
+        }
+    ],
+    "autoload": {
+        "psr-4" : { "Clue\\React\\Shell\\": "src/" }
+    },
+    "require": {
+        "php": ">=5.3",
+        "react/promise": "~1.0|~2.0",
+        "react/child-process": "~0.3.0|~0.4.0",
+        "react/stream": "~0.3.0|~0.4.0",
+        "react/event-loop": "~0.3.0|~0.4.0"
+    }
+}
