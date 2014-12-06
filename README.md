@@ -2,7 +2,7 @@
 
 Run async commands within any interactive shell command, built on top of React PHP.
 
-> Note: This project is in early alpha stage! Feel free to report any issues you encounter.
+> Note: This project is in beta stage! Feel free to report any issues you encounter.
 
 ## Quickstart example
 
@@ -41,7 +41,7 @@ The recommended way to install this library is [through composer](http://getcomp
 ```JSON
 {
     "require": {
-        "clue/shell-react": "dev-master"
+        "clue/shell-react": "~0.1.0"
     }
 }
 ```
