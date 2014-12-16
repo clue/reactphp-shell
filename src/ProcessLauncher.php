@@ -38,6 +38,13 @@ class ProcessLauncher
 
         $stream = new CompositeStream($process->stdout, $process->stdin);
 
+        // forcefully terminate process when stream closes
+        $stream->on('close', function () use ($process) {
+            if ($process->isRunning()) {
+                $process->terminate(SIGKILL);
+            }
+        });
+
         return new DeferredShell($stream);
     }
 }
