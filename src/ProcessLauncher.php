@@ -25,12 +25,15 @@ class ProcessLauncher
      * If the command prints output to STDERR, make sure to redirect it to
      * STDOUT by appending " 2>&1".
      *
-     * @param string $command
+     * @param string|Process $process accepts either a command string to execute or a Process instance
      * @return DeferredShell
      */
-    public function createDeferredShell($command)
+    public function createDeferredShell($process)
     {
-        $process = new Process($command);
+        if (!($process instanceof Process)) {
+            $process = new Process($process);
+        }
+
         $process->start($this->loop);
 
         $stream = new CompositeStream($process->stdout, $process->stdin);
