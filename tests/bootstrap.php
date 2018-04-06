@@ -58,7 +58,7 @@ class TestCase extends PHPUnit_Framework_TestCase
      */
     protected function createCallableMock()
     {
-        return $this->getMock('CallableStub');
+        return $this->createMock('CallableStub');
     }
 
     protected function expectPromiseResolve($promise)
