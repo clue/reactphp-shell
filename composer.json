@@ -14,7 +14,7 @@
         "psr-4" : { "Clue\\React\\Shell\\": "src/" }
     },
     "require": {
-        "php": ">=5.3",
+        "php": ">=5.6",
         "react/promise": "~1.0|~2.0",
         "react/child-process": "~0.3.0|~0.4.0|^0.5",
         "react/stream": "~0.3.0|~0.4.0|^0.5|^0.6|^0.7",
