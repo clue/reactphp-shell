@@ -14,6 +14,9 @@ class FunctionalTest extends TestCase
         $this->launcher = new ProcessLauncher($this->loop);
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testEndEmptyClosesImmediately()
     {
         $shell = $this->launcher->createDeferredShell('cat');
@@ -23,6 +26,9 @@ class FunctionalTest extends TestCase
         $this->loop->run();
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testCloseEmpty()
     {
         $shell = $this->launcher->createDeferredShell('cat');
@@ -106,8 +112,7 @@ class FunctionalTest extends TestCase
 
     public function testPhpShell()
     {
-        // TODO: skipped for lack of compatibility with HHVM
-        return;
+        $this->markTestSkipped();
 
         $shell = $this->launcher->createDeferredShell('php -a');
         $shell->setBounding('echo "{{ bounding }}";');

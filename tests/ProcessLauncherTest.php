@@ -10,15 +10,15 @@ class ProcessLauncherTest extends TestCase
 
     public function setUp()
     {
-        $this->loop = $this->getMock('React\EventLoop\LoopInterface');
+        $this->loop = $this->getMockBuilder('React\EventLoop\LoopInterface')->getMock();
         $this->processLauncher = new ProcessLauncher($this->loop);
     }
 
     public function testProcessWillBeStarted()
     {
         $process = $this->getMockBuilder('React\ChildProcess\Process')->disableOriginalConstructor()->getMock();
-        $process->stdout = $this->getMock('React\Stream\ReadableStreamInterface');
-        $process->stdin = $this->getMock('React\Stream\WritableStreamInterface');
+        $process->stdout = $this->getMockBuilder('React\Stream\ReadableStreamInterface')->getMock();
+        $process->stdin = $this->getMockBuilder('React\Stream\WritableStreamInterface')->getMock();
 
         $process->expects($this->once())->method('start');
 
@@ -31,7 +31,7 @@ class ProcessLauncherTest extends TestCase
     {
         $process = $this->getMockBuilder('React\ChildProcess\Process')->disableOriginalConstructor()->getMock();
         $process->stdout = new ReadableStream();
-        $process->stdin = $this->getMock('React\Stream\WritableStreamInterface');
+        $process->stdin = $this->getMockBuilder('React\Stream\WritableStreamInterface')->getMock();
 
         $process->expects($this->once())->method('isRunning')->will($this->returnValue(true));
         $process->expects($this->once())->method('terminate')->with($this->equalTo(SIGKILL));
@@ -45,7 +45,7 @@ class ProcessLauncherTest extends TestCase
     {
         $process = $this->getMockBuilder('React\ChildProcess\Process')->disableOriginalConstructor()->getMock();
         $process->stdout = new ReadableStream();
-        $process->stdin = $this->getMock('React\Stream\WritableStreamInterface');
+        $process->stdin = $this->getMockBuilder('React\Stream\WritableStreamInterface')->getMock();
 
         $process->expects($this->once())->method('isRunning')->will($this->returnValue(false));
         $process->expects($this->never())->method('terminate');
