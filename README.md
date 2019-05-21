@@ -1,6 +1,6 @@
-# clue/shell-react [![Build Status](https://travis-ci.org/clue/php-shell-react.svg?branch=master)](https://travis-ci.org/clue/php-shell-react)
+# clue/reactphp-shell [![Build Status](https://travis-ci.org/clue/reactphp-shell.svg?branch=master)](https://travis-ci.org/clue/reactphp-shell)
 
-Run async commands within any interactive shell command, built on top of React PHP.
+Run async commands within any interactive shell command, built on top of [ReactPHP](https://reactphp.org/).
 
 > Note: This project is in beta stage! Feel free to report any issues you encounter.
 
