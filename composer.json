@@ -1,8 +1,8 @@
 {
     "name": "clue/shell-react",
-    "description": "Run async commands within any interactive shell command",
+    "description": "Run async commands within any interactive shell command, built on top of ReactPHP.",
     "keywords": ["interactive", "sheller", "ReactPHP", "async"],
-    "homepage": "https://github.com/clue/php-shell-react",
+    "homepage": "https://github.com/clue/reactphp-shell",
     "license": "MIT",
     "authors": [
         {
