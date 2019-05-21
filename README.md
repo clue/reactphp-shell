@@ -36,15 +36,20 @@ See also the [examples](examples):
 
 ## Install
 
-The recommended way to install this library is [through composer](http://getcomposer.org). [New to composer?](http://getcomposer.org/doc/00-intro.md)
+The recommended way to install this library is [through Composer](https://getcomposer.org).
+[New to Composer?](https://getcomposer.org/doc/00-intro.md)
 
-```JSON
-{
-    "require": {
-        "clue/shell-react": "~0.2.0"
-    }
-}
+This will install the latest supported version:
+
+```bash
+$ composer require clue/shell-react:^0.2
 ```
+
+See also the [CHANGELOG](CHANGELOG.md) for details about version upgrades.
+
+This project aims to run on any platform and thus does not require any PHP
+extensions and supports running on legacy PHP 5.3 through current PHP 7+.
+It's *highly recommended to use PHP 7+* for this project.
 
 ## Tests
 
