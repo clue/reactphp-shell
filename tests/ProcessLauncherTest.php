@@ -1,7 +1,6 @@
 <?php
 
 use Clue\React\Shell\ProcessLauncher;
-use React\Stream\ReadableStream;
 
 class ProcessLauncherTest extends TestCase
 {
@@ -30,8 +29,11 @@ class ProcessLauncherTest extends TestCase
     public function testClosingStreamTerminatesRunningProcess()
     {
         $process = $this->getMockBuilder('React\ChildProcess\Process')->disableOriginalConstructor()->getMock();
-        $process->stdout = new ReadableStream();
+        $process->stdout = $this->getMockBuilder('React\Stream\ReadableStreamInterface')->getMock();
         $process->stdin = $this->getMockBuilder('React\Stream\WritableStreamInterface')->getMock();
+
+        $process->stdout->expects($this->any())->method('isReadable')->willReturn(true);
+        $process->stdin->expects($this->any())->method('isWritable')->willReturn(true);
 
         $process->expects($this->once())->method('isRunning')->will($this->returnValue(true));
         $process->expects($this->once())->method('terminate')->with($this->equalTo(SIGKILL));
@@ -44,8 +46,11 @@ class ProcessLauncherTest extends TestCase
     public function testClosingStreamOfNonRunningProcessWillNotTerminate()
     {
         $process = $this->getMockBuilder('React\ChildProcess\Process')->disableOriginalConstructor()->getMock();
-        $process->stdout = new ReadableStream();
+        $process->stdout = $this->getMockBuilder('React\Stream\ReadableStreamInterface')->getMock();
         $process->stdin = $this->getMockBuilder('React\Stream\WritableStreamInterface')->getMock();
+
+        $process->stdout->expects($this->any())->method('isReadable')->willReturn(true);
+        $process->stdin->expects($this->any())->method('isWritable')->willReturn(true);
 
         $process->expects($this->once())->method('isRunning')->will($this->returnValue(false));
         $process->expects($this->never())->method('terminate');
