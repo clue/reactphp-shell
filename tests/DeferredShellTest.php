@@ -8,7 +8,7 @@ class DeferredShellTest extends TestCase
 
     public function setUp()
     {
-        $this->stream = $this->getMockBuilder('React\Stream\CompositeStream')->disableOriginalConstructor()->getMock();
+        $this->stream = $this->getMockBuilder('React\Stream\DuplexStreamInterface')->getMock();
     }
 
     public function testExecuteWritesToStream()

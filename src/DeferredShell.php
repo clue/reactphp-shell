@@ -3,7 +3,7 @@
 namespace Clue\React\Shell;
 
 use React\Promise\Deferred;
-use React\Stream\CompositeStream;
+use React\Stream\DuplexStreamInterface;
 use RuntimeException;
 
 class DeferredShell
@@ -21,7 +21,7 @@ class DeferredShell
     private $buffer = '';
     private $started = false;
 
-    public function __construct(CompositeStream $stream)
+    public function __construct(DuplexStreamInterface $stream)
     {
         $this->stream = $stream;
 
