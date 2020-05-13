@@ -1,5 +1,7 @@
 <?php
 
+namespace Clue\Tests\React\Shell;
+
 use Clue\React\Shell\DeferredShell;
 
 class DeferredShellTest extends TestCase
