@@ -1,5 +1,7 @@
 <?php
 
+namespace Clue\Tests\React\Shell;
+
 use React\EventLoop\Factory;
 use Clue\React\Shell\ProcessLauncher;
 

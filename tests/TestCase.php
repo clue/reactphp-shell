@@ -1,13 +1,11 @@
 <?php
 
+namespace Clue\Tests\React\Shell;
+
 use React\EventLoop\LoopInterface;
 use React\Promise\PromiseInterface;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
-error_reporting(-1);
-
-class TestCase extends PHPUnit\Framework\TestCase
+class TestCase extends \PHPUnit\Framework\TestCase
 {
     protected function expectCallableOnce()
     {

@@ -1,5 +1,7 @@
 <?php
 
+namespace Clue\Tests\React\Shell;
+
 use Clue\React\Shell\ProcessLauncher;
 
 class ProcessLauncherTest extends TestCase
