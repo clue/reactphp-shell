@@ -41,7 +41,7 @@ class ProcessLauncherTest extends TestCase
         $process->stdin->expects($this->any())->method('isWritable')->willReturn(true);
 
         $process->expects($this->once())->method('isRunning')->will($this->returnValue(true));
-        $process->expects($this->once())->method('terminate')->with($this->equalTo(SIGKILL));
+        $process->expects($this->once())->method('terminate')->with($this->equalTo(defined('SIGKILL') ? SIGKILL : null));
 
         $shell = $this->processLauncher->createDeferredShell($process);
 

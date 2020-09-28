@@ -41,7 +41,7 @@ class ProcessLauncher
         // forcefully terminate process when stream closes
         $stream->on('close', function () use ($process) {
             if ($process->isRunning()) {
-                $process->terminate(SIGKILL);
+                $process->terminate(defined('SIGKILL') ? SIGKILL : null);
             }
         });
 
