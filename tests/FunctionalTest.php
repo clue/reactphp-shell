@@ -10,7 +10,10 @@ class FunctionalTest extends TestCase
     private $loop;
     private $launcher;
 
-    public function setUp()
+    /**
+     * @before
+     */
+    public function setUpLauncher()
     {
         $this->loop = Factory::create();
         $this->launcher = new ProcessLauncher($this->loop);

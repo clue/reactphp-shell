@@ -9,7 +9,10 @@ class ProcessLauncherTest extends TestCase
     private $loop;
     private $processLauncher;
 
-    public function setUp()
+    /**
+     * @before
+     */
+    public function setUpProcessLauncher()
     {
         $this->loop = $this->getMockBuilder('React\EventLoop\LoopInterface')->getMock();
         $this->processLauncher = new ProcessLauncher($this->loop);
