@@ -1,4 +1,6 @@
-# clue/reactphp-shell [![Build Status](https://travis-ci.org/clue/reactphp-shell.svg?branch=master)](https://travis-ci.org/clue/reactphp-shell)
+# clue/reactphp-shell
+
+[![CI status](https://github.com/clue/reactphp-shell/workflows/CI/badge.svg)](https://github.com/clue/reactphp-shell/actions)
 
 Run async commands within any interactive shell command, built on top of [ReactPHP](https://reactphp.org/).
 
