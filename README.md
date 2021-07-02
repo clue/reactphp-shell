@@ -1,6 +1,7 @@
 # clue/reactphp-shell
 
 [![CI status](https://github.com/clue/reactphp-shell/workflows/CI/badge.svg)](https://github.com/clue/reactphp-shell/actions)
+[![installs on Packagist](https://img.shields.io/packagist/dt/clue/shell-react?color=blue&label=installs%20on%20Packagist)](https://packagist.org/packages/clue/shell-react)
 
 Run async commands within any interactive shell command, built on top of [ReactPHP](https://reactphp.org/).
 
