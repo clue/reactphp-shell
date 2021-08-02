@@ -1,12 +1,10 @@
 <?php
 
-use React\EventLoop\Factory;
 use Clue\React\Shell\ProcessLauncher;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$loop = Factory::create();
-$launcher = new ProcessLauncher($loop);
+$launcher = new ProcessLauncher();
 
 $shell = $launcher->createDeferredShell('php -a');
 $shell->setBounding("echo '{{ bounding }}';");
@@ -24,5 +22,3 @@ CODE
 });
 
 $shell->end();
-
-$loop->run();

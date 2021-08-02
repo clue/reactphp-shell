@@ -13,8 +13,7 @@ Once [installed](#install), you can use the following code to run an interactive
 bash shell and issue some commands within:
 
 ```php
-$loop = React\EventLoop\Factory::create();
-$launcher = new ProcessLauncher($loop);
+$launcher = new Clue\React\Shell\ProcessLauncher();
 
 $shell = $launcher->createDeferredShell('bash');
 
@@ -27,8 +26,6 @@ $shell->execute('env | sort | head -n10')->then(function ($env) {
 });
 
 $shell->end();
-
-$loop->run();
 ```
 
 See also the [examples](examples):

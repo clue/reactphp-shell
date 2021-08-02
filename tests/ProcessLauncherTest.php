@@ -18,6 +18,17 @@ class ProcessLauncherTest extends TestCase
         $this->processLauncher = new ProcessLauncher($this->loop);
     }
 
+    public function testConstructWithoutLoopAssignsLoopAutomatically()
+    {
+        $launcher = new ProcessLauncher();
+
+        $ref = new \ReflectionProperty($launcher, 'loop');
+        $ref->setAccessible(true);
+        $loop = $ref->getValue($launcher);
+
+        $this->assertInstanceOf('React\EventLoop\LoopInterface', $loop);
+    }
+
     public function testProcessWillBeStarted()
     {
         $process = $this->getMockBuilder('React\ChildProcess\Process')->disableOriginalConstructor()->getMock();
