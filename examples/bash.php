@@ -1,12 +1,10 @@
 <?php
 
-use React\EventLoop\Factory;
 use Clue\React\Shell\ProcessLauncher;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$loop = Factory::create();
-$launcher = new ProcessLauncher($loop);
+$launcher = new ProcessLauncher();
 
 $shell = $launcher->createDeferredShell('bash 2>&1');
 
@@ -19,5 +17,3 @@ $shell->execute('env | sort | head -n10')->then(function ($env) {
 });
 
 $shell->end();
-
-$loop->run();
