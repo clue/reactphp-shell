@@ -11,10 +11,14 @@
         }
     ],
     "autoload": {
-        "psr-4" : { "Clue\\React\\Shell\\": "src/" }
+        "psr-4" : {
+            "Clue\\React\\Shell\\": "src/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Clue\\Tests\\React\\Shell\\": "tests/" }
+        "psr-4": {
+            "Clue\\Tests\\React\\Shell\\": "tests/"
+        }
     },
     "require": {
         "php": ">=5.3",
@@ -24,6 +28,6 @@
         "react/promise": "^2.0 || ^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.35"
+        "phpunit/phpunit": "^9.6 || ^5.7 || ^4.8.36"
     }
 }
