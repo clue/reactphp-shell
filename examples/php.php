@@ -1,10 +1,8 @@
 <?php
 
-use Clue\React\Shell\ProcessLauncher;
-
 require __DIR__ . '/../vendor/autoload.php';
 
-$launcher = new ProcessLauncher();
+$launcher = new Clue\React\Shell\ProcessLauncher();
 
 $shell = $launcher->createDeferredShell('php -a');
 $shell->setBounding("echo '{{ bounding }}';");
@@ -19,6 +17,8 @@ for ($i=0; $i<3; ++$i) {
 CODE
 )->then(function ($output) {
     echo 'Program output: ' . PHP_EOL . $output . PHP_EOL;
+}, function (Exception $e) {
+    echo 'Error: ' . $e->getMessage() . PHP_EOL;
 });
 
 $shell->end();
